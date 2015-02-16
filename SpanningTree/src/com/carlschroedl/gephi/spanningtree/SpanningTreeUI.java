@@ -18,7 +18,7 @@ import org.openide.util.lookup.ServiceProvider;
 @ServiceProvider(service = StatisticsUI.class)
 public class SpanningTreeUI implements StatisticsUI {
 
-    private SpanningTreePanel2 panel;
+    private SpanningTreePanel panel;
 /*    
     public SpanningTreeUI(){
         this.myMetric = new SpanningTree();
@@ -27,7 +27,7 @@ public class SpanningTreeUI implements StatisticsUI {
     
     @Override
     public JPanel getSettingsPanel() {
-        panel = new SpanningTreePanel2(this);
+        panel = new SpanningTreePanel(this);
         return panel; //null if no panel exists
     }
 

@@ -9,7 +9,7 @@ package com.carlschroedl.gephi.spanningtree;
  *
  * @author carlschroedl
  */
-public class SpanningTreePanel2 extends javax.swing.JPanel {
+public class SpanningTreePanel extends javax.swing.JPanel {
 private static final String NOT_FOUND = "No Algorithms Found";
     
     //stui is a link in the chain of communication between front and back end
@@ -18,7 +18,7 @@ private static final String NOT_FOUND = "No Algorithms Found";
     
     /** Creates new form SpanningTreePanel */
 
-    public SpanningTreePanel2(SpanningTreeUI stui) {
+    public SpanningTreePanel(SpanningTreeUI stui) {
         
         this.stui=stui;
         
