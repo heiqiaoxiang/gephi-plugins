@@ -12,17 +12,14 @@ import org.gephi.data.attributes.api.AttributeType;
 import org.gephi.graph.api.Edge;
 import org.gephi.graph.api.Graph;
 import org.gephi.graph.api.GraphModel;
-import org.gephi.graph.api.Model;
 import org.gephi.graph.api.Node;
 import org.gephi.utils.progress.Progress;
 import org.gephi.utils.progress.ProgressTicket;
-import org.openide.util.lookup.ServiceProvider;
 
 /**
  *
  * @author Carl Schroedl <carlschroedl@gmail.com>
  */
-@ServiceProvider(service = SpanningTreeAlgorithm.class)
 public class KruskalsAlgorithm extends SpanningTreeAlgorithm {
 
     private static final String name = "Kruskal's Algorithm";
@@ -39,7 +36,7 @@ public class KruskalsAlgorithm extends SpanningTreeAlgorithm {
         //See http://wiki.gephi.org/index.php/HowTo_write_a_metric#Implementation_help
         graph.writeLock();
         kNodes = new HashMap<Integer, KNode>();
-        PriorityQueue<KEdge> edgeQ = new PriorityQueue();
+        PriorityQueue<KEdge> edgeQ = new PriorityQueue<>();
         this.STweight = 0;
         this.edgesInST = 0;
 
@@ -303,7 +300,7 @@ public class KruskalsAlgorithm extends SpanningTreeAlgorithm {
         }
     }
 
-    private class KEdge implements Comparable {
+    private class KEdge implements Comparable<KEdge> {
         /*
          * This class is necessary because there needs to be a representation
          * of edges with KNode source and target nodes. See KNodes for why KNodes
@@ -353,27 +350,6 @@ public class KruskalsAlgorithm extends SpanningTreeAlgorithm {
             this(source, target, 1);
         }
 
-        public int compareTo(Object obj) {
-            if (obj instanceof KEdge) {
-                KEdge otherKEdge = (KEdge) obj;
-                double difference = this.weight - otherKEdge.weight;
-                /*
-                 * the method does not simply return 'difference' because the 
-                 * interface's specified return type is int. Casting from double
-                 * to int could result in precision loss and incorrect comparisons
-                 */
-                if (0 < difference) {
-                    return 1;
-                } else if (0 > difference) {
-                    return -1;
-                } else {
-                    return 0;
-                }
-            } else {
-                throw new IllegalArgumentException("a non KEdge object was supplied");
-            }
-        }
-
         public String toString() {
             return "[" + this.source.toString()
                     + "]<====" + this.weight
@@ -416,6 +392,23 @@ public class KruskalsAlgorithm extends SpanningTreeAlgorithm {
         /*
          * </ACCESSORS AND MUTATORS>
          */
+
+        @Override
+        public int compareTo(KEdge otherKEdge) {
+            double difference = this.weight - otherKEdge.weight;
+                /*
+                 * the method does not simply return 'difference' because the 
+                 * interface's specified return type is int. Casting from double
+                 * to int could result in precision loss and incorrect comparisons
+                 */
+                if (0 < difference) {
+                    return 1;
+                } else if (0 > difference) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+        }
     }//end inner class
 // </editor-fold>
 }//outer class

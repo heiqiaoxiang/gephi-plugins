@@ -5,12 +5,6 @@
  */
 package com.carlschroedl.gephi.spanningtree;
 
-import java.util.Collection;
-import java.util.Vector;
-import javax.swing.ComboBoxModel;
-import javax.swing.DefaultComboBoxModel;
-import org.openide.util.*;
-
 /**
  *
  * @author carlschroedl
@@ -30,20 +24,6 @@ private static final String NOT_FOUND = "No Algorithms Found";
         
         initComponents();
         
-        //Collect all available spanningTreeAlgorithms
-        Collection<? extends SpanningTreeAlgorithm> spanningTreeAlgorithms = 
-                Lookup.getDefault().lookupAll(SpanningTreeAlgorithm.class);
-       
-        Vector options;
-        boolean empty = spanningTreeAlgorithms.isEmpty();
-        if (empty){ 
-            options = new Vector();
-            options.add(NOT_FOUND);
-        }
-        else{
-            options = new Vector(spanningTreeAlgorithms);
-        }
-        ComboBoxModel comboModel = new DefaultComboBoxModel(options);
 //        algorithmComboBox.setModel(comboModel);
 //        propogateAlgorithmChange();
         
