@@ -92,7 +92,8 @@ private static final String NOT_FOUND = "No Algorithms Found";
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
 
-        jTextPane1.setText(org.openide.util.NbBundle.getMessage(SpanningTreePanel2.class, "SpanningTreePanel2.jTextPane1.text")); // NOI18N
+        jTextPane1.setEditable(false);
+        jTextPane1.setText("This Plugin will cacluate the Minimum Spanning Tree of the graph using Kruskall's Algorithm.\nAn additional attribute with the name \"Spanning Tree\" will be added to each graph member. If the graph member is in the spanning tree, the value in the \"Spanning Tree\" attribute will be \"1\", otherwise it will be \"0\".");
         jScrollPane1.setViewportView(jTextPane1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
