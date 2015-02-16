@@ -17,11 +17,6 @@ import org.openide.util.lookup.ServiceProvider;
 @ServiceProvider(service = StatisticsBuilder.class)
 public class SpanningTreeBuilder implements StatisticsBuilder {
     
-    //ugly fix
-    private static SpanningTreeAlgorithm stAlg;
-    
-    
-    
     @Override
     public String getName() {
         return "Spanning Tree";
@@ -29,26 +24,12 @@ public class SpanningTreeBuilder implements StatisticsBuilder {
 
     @Override
     public Statistics getStatistics() {
-        return new SpanningTree(SpanningTreeBuilder.stAlg);
+        return new SpanningTree();
     }
     
     @Override
     public Class<? extends Statistics> getStatisticsClass() {
         return SpanningTree.class;
-    }
-
-    /**
-     * @return the stAlg
-     */
-    public static SpanningTreeAlgorithm getSpanningTreeAlgorithm() {
-        return stAlg;
-    }
-
-    /**
-     * @param stAlg the stAlg to set
-     */
-    public static void setSpanningTreeAlgorithm(SpanningTreeAlgorithm stAlg) {
-        SpanningTreeBuilder.stAlg = stAlg;
     }
 
 }

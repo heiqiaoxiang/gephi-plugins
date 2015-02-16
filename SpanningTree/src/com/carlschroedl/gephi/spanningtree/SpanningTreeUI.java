@@ -19,17 +19,11 @@ import org.openide.util.lookup.ServiceProvider;
 public class SpanningTreeUI implements StatisticsUI {
 
     private SpanningTreePanel2 panel;
-    private SpanningTree myMetric;
-    private SpanningTreeAlgorithm spanningTreeAlgorithm;
 /*    
     public SpanningTreeUI(){
         this.myMetric = new SpanningTree();
     }
   */  
-    public void setSpanningTreeAlgorithm(SpanningTreeAlgorithm alg){
-        this.spanningTreeAlgorithm = alg;
-        //myMetric.setStAlgorithm(alg);
-    }
     
     @Override
     public JPanel getSettingsPanel() {
@@ -39,19 +33,10 @@ public class SpanningTreeUI implements StatisticsUI {
 
     @Override
     public void setup(Statistics statistics) {
-        
-            this.myMetric = (SpanningTree) statistics;
-            this.myMetric.setStAlgorithm(this.spanningTreeAlgorithm);
-//        if (panel != null) {
-//            panel.setDirected(myMetric.isDirected()); //Remove it if not useful
-//        }
     }
 
     @Override
     public void unsetup() {
-//        if (panel != null) {
-//            myMetric.setDirected(panel.isDirected()); //Remove it if not useful
-//        }
         panel = null;
     }
 

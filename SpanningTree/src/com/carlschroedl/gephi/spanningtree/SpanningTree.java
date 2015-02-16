@@ -25,8 +25,7 @@ public class SpanningTree implements Statistics, LongTask {
     
     private boolean directed;
     
-    public SpanningTree(SpanningTreeAlgorithm stAlgorithm){
-        this.stAlgorithm = stAlgorithm;
+    public SpanningTree(){
     }
     
     @Override
@@ -36,14 +35,8 @@ public class SpanningTree implements Statistics, LongTask {
     }
     //a more general version of execute()
     public void execute(Graph graph, AttributeModel attributeModel){
-        
-        //Your algorithm
-        if( null == stAlgorithm){
-            throw new NullPointerException("No Spanning Tree Algorithm was set.");
-        }
-        else{
-            stAlgorithm.execute(graph, attributeModel);
-        }
+        this.stAlgorithm = new KruskalsAlgorithm();
+        stAlgorithm.execute(graph, attributeModel);
         
     }
     /** Only useful if the algorithm takes graph type into account. */
@@ -72,19 +65,5 @@ public class SpanningTree implements Statistics, LongTask {
     @Override
     public void setProgressTicket(ProgressTicket progressTicket) {
         this.progressTicket = progressTicket;
-    }
-
-    /**
-     * @return the stAlgorithm
-     */
-    public SpanningTreeAlgorithm getStAlgorithm() {
-        return stAlgorithm;
-    }
-
-    /**
-     * @param stAlgorithm the stAlgorithm to set
-     */
-    public void setStAlgorithm(SpanningTreeAlgorithm stAlgorithm) {
-        this.stAlgorithm = stAlgorithm;
     }
 }
