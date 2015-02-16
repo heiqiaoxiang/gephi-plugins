@@ -36,7 +36,7 @@ public class KruskalsAlgorithm extends SpanningTreeAlgorithm {
         //See http://wiki.gephi.org/index.php/HowTo_write_a_metric#Implementation_help
         graph.writeLock();
         kNodes = new HashMap<Integer, KNode>();
-        PriorityQueue<KEdge> edgeQ = new PriorityQueue<>();
+        PriorityQueue<KEdge> edgeQ = new PriorityQueue<KEdge>();
         this.STweight = 0;
         this.edgesInST = 0;
 
