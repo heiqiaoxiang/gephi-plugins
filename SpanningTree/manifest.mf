@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+AutoUpdate-Show-In-Client: true
+OpenIDE-Module: com.carlschroedl.gephi.spanningtree
+OpenIDE-Module-Localizing-Bundle: com/carlschroedl/gephi/spanningtree/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+
