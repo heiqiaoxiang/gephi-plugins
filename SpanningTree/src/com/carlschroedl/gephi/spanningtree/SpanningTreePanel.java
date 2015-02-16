@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.carlschroedl.gephi.spanningtree;
 
 /**
@@ -10,52 +5,13 @@ package com.carlschroedl.gephi.spanningtree;
  * @author carlschroedl
  */
 public class SpanningTreePanel extends javax.swing.JPanel {
-private static final String NOT_FOUND = "No Algorithms Found";
-    
-    //stui is a link in the chain of communication between front and back end
-    // SpanningTreePanel<-->SpanningTreeUI<-->SpanningTree
-    private SpanningTreeUI stui;
     
     /** Creates new form SpanningTreePanel */
 
     public SpanningTreePanel(SpanningTreeUI stui) {
-        
-        this.stui=stui;
-        
         initComponents();
-        
-//        algorithmComboBox.setModel(comboModel);
-//        propogateAlgorithmChange();
-        
-        //only enable if options are not empty
-//        algorithmComboBox.setEnabled(!empty);              
-        
     }
 
-    /** Add here setters and getters for all properties users can edit. */
-
-
-    
-    /** Only useful if the algorithm takes graph type into account. */
-    
-//    public boolean isDirected() {
-//        return directedRadioButton.isSelected();
-//    }
-//
-//    public void setDirected(boolean directed) {
-//        directedButtonGroup.setSelected(directed ? directedRadioButton.getModel() : undirectedRadioButton.getModel(), true);
-//    }
-//
-//
-//        private void propogateAlgorithmChange(){
-//
-//        Object selection = algorithmComboBox.getSelectedItem();
-//        
-//        if(selection instanceof SpanningTreeAlgorithm){
-//            stui.setSpanningTreeAlgorithm((SpanningTreeAlgorithm)selection);
-//        }
-//
-//    }
     
     /**
      * This method is called from within the constructor to initialize the form.

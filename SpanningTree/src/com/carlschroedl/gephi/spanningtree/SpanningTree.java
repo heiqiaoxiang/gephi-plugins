@@ -1,7 +1,3 @@
-/*
- * Your license here
- */
-
 package com.carlschroedl.gephi.spanningtree;
 
 import org.gephi.data.attributes.api.AttributeModel;

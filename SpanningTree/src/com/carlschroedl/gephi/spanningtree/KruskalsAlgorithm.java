@@ -139,7 +139,9 @@ public class KruskalsAlgorithm extends SpanningTreeAlgorithm {
         return "Number of edges in spanning tree: "
                 + this.edgesInST
                 + "<br/> Weight of spanning tree: "
-                + this.STweight;
+                + this.STweight
+                + "<br/> Every graph member in the spanning tree now has an attribute \"Spanning Tree\" set equal to \"1\"."
+                + "<br/> The spanning tree can be visualized by creating a Filter on the Attribute \"Spanning Tree\" with value = \"1\"";
     }
 
     // <editor-fold defaultstate="collapsed" desc="Inner Helper Classes">
